@@ -1,22 +1,19 @@
 package com.cimba.caculator;
 
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
-import java.net.URL;
-import java.util.ResourceBundle;
 
 public class MainWindowController{
 
     @FXML private Pane titlePane;
     @FXML private ImageView imgViewClose;
     @FXML private ImageView imgViewHide;
+    @FXML private Label lblResult;
 
     private double x, y;
 
@@ -37,10 +34,19 @@ public class MainWindowController{
 
     }
 
-//    @FXML
-//    void close(MouseEvent event){
-//        Stage stage = (Stage) ((ImageView)event.getSource()).getScene().getWindow();
-//        stage.close();
-//    }
+
+    @FXML
+    void onNumberClicked(MouseEvent event) {
+        int value = Integer.parseInt(((Pane)event.getSource()).getId().replace("btn", ""));
+        lblResult.setText(Double.parseDouble(lblResult.getText()) == 0 ?
+                        String.valueOf((double) value) : String.valueOf(Double.parseDouble(lblResult.getText()) * 10 + value));
+    }
+
+    @FXML
+    void onSymbolClicked(MouseEvent event) {
+        String symbol = ((Pane) event.getSource()).getId().replace("btn", "");
+
+    }
+
 
 }
