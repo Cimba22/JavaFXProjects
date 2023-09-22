@@ -16,13 +16,14 @@ public class MainWindow extends Application {
         FXMLLoader loader = new FXMLLoader(MainWindow.class.getResource("main-window-interface.fxml"));
         Scene scene = new Scene(loader.load());
         scene.setFill(Color.TRANSPARENT);
-        stage.initStyle(StageStyle.TRANSPARENT);
 
 
         stage.setScene(scene);
+        stage.initStyle(StageStyle.TRANSPARENT);
         stage.setResizable(false);
         stage.setTitle("Calculator");
         stage.getIcons().add(new Image(getClass().getResourceAsStream("icon.png")));
+        ((MainWindowController)loader.getController()).init(stage);
         stage.show();
 
     }

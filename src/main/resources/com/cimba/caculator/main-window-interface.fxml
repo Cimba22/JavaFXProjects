@@ -20,12 +20,12 @@
    <children>
       <Pane fx:id="titlePane" prefHeight="41.0" prefWidth="460.0">
          <children>
-            <ImageView fitHeight="16.0" fitWidth="16.0" layoutX="430.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgViewClose" fitHeight="16.0" fitWidth="16.0" layoutX="430.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@close.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="16.0" fitWidth="16.0" layoutX="404.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgViewHide" fitHeight="16.0" fitWidth="16.0" layoutX="404.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@hide.png" />
                </image>
